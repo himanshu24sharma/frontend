@@ -27,8 +27,13 @@ function Driver() {
   ];
 
   return (
-    <div className="flex flex-col h-screen p-6 items-center">
-      <h1 className="text-3xl font-bold mb-4">Drivers List</h1>
+    <div className=" h-screen p-6 items-center">
+      <div className="flex justify-between">
+        <h1 className="text-3xl font-bold">Drivers List</h1>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded block">
+          Create
+        </button>
+      </div>
       <div className="overflow-y-auto flex-grow w-full max-w-4xl">
         <ul>
           {drivers.map((driver) => (

@@ -1,5 +1,6 @@
 import React from "react";
 import ContentBox from "./components/ContentBox";
+import Footer from "../../component/footer/footer";
 
 function Vehicle() {
   const drivers = [
@@ -50,27 +51,29 @@ function Vehicle() {
   ];
 
   return (
-    <div className=" h-screen p-6 items-center">
-      <div className="flex justify-between">
-        <h1 className="text-3xl font-bold">Vehicle List</h1>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded block">
-          Create
-        </button>
+    <>
+      <Footer />
+      <div className="mt-16">
+        <div className="h-screen p-6 flex flex-col items-center">
+          <div className="flex justify-between">
+            <h1 className="text-3xl font-bold">Vehicle List</h1>
+          </div>
+          <div className="overflow-y-auto flex-grow w-full max-w-4xl mt-4">
+            <ul>
+              {vehicles.map((vehicle) => (
+                <li key={vehicle.id}>
+                  <ContentBox
+                    title={vehicle.Model}
+                    content={[vehicle.LicensePlate]}
+                    driverinfo={drivers}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-      <div className="overflow-y-auto flex-grow w-full max-w-4xl">
-        <ul>
-          {vehicles.map((vehicle) => (
-            <li key={vehicle.id}>
-              <ContentBox
-                title={vehicle.Model}
-                content={[vehicle.LicensePlate]}
-                driverinfo={drivers}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    </>
   );
 }
 

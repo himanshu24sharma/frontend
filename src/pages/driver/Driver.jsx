@@ -1,7 +1,10 @@
 import React from "react";
 import ContentBox from "./components/ContentBox";
+import Footer from "../../component/footer/footer";
+import { useNavigate } from "react-router-dom";
 
 function Driver() {
+  const navigate = useNavigate();
   const drivers = [
     {
       id: "123",
@@ -27,26 +30,40 @@ function Driver() {
   ];
 
   return (
-    <div className=" h-screen p-6 items-center">
-      <div className="flex justify-between">
-        <h1 className="text-3xl font-bold">Drivers List</h1>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  rounded block">
-          Create
-        </button>
+    <>
+      <Footer />
+      <div className="mt-16">
+        <div className="h-screen p-6 flex flex-col items-center">
+          <div className="flex justify-between">
+            <h1 className="text-3xl font-bold mx-8">Drivers List</h1>
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={() => {
+                console.log("1");
+                navigate("create", {
+                  state: {},
+                });
+              }}
+            >
+              Create
+            </button>
+          </div>
+          <div className="overflow-y-auto flex-grow w-full max-w-4xl mt-4">
+            <ul>
+              {drivers.map((driver) => (
+                <li key={driver.id}>
+                  <ContentBox
+                    title={driver.name}
+                    content={[driver.email, driver.phone, driver.location]}
+                    id={driver.id}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-      <div className="overflow-y-auto flex-grow w-full max-w-4xl">
-        <ul>
-          {drivers.map((driver) => (
-            <li key={driver.id}>
-              <ContentBox
-                title={driver.name}
-                content={[driver.email, driver.phone, driver.location]}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    </>
   );
 }
 

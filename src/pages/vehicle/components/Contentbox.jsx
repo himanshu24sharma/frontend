@@ -18,7 +18,7 @@ const ContentBox = ({ title, content, driverinfo }) => {
       <div className="border border-gray-300 p-4 my-4 rounded-lg bg-gray-100">
         <div className="col-span-1 w-36 sm:col-span-2 md:col-span-2 align-left ">
           <select
-            className={`border border-gray-300 focus:border-blue-100 block w-full text-blue-600 rounded-md focus:ring-blue-400`}
+            className={`border border-gray-300 focus:border-slate-400 block w-full text-slate-400 rounded-md focus:ring-slate-400`}
             value={""}
             onChange={() => {}}
           >

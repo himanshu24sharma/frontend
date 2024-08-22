@@ -53,10 +53,10 @@ function Vehicle() {
   return (
     <>
       <Footer />
-      <div className="mt-16">
+      <div className="mt-16  bg-slate-300">
         <div className="h-screen p-6 flex flex-col items-center">
-          <div className="flex justify-between">
-            <h1 className="text-3xl font-bold">Vehicle List</h1>
+          <div className="flex justify-between mt-4">
+            <h1 className="text-3xl font-bold text-black	">Vehicle List</h1>
           </div>
           <div className="overflow-y-auto flex-grow w-full max-w-4xl mt-4">
             <ul>

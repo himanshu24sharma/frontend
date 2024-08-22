@@ -17,7 +17,7 @@ const ContentBox = ({ title, content, id }) => {
     console.log("delete button clicked", id);
   };
   return (
-    <div className="flex">
+    <div className="flex border-b-4">
       <div className="border border-gray-300 p-4 my-4 rounded-lg bg-gray-100 mx-10">
         <h2 className="text-xl font-semibold mb-2">{title}</h2>
         <div className="space-y-1">

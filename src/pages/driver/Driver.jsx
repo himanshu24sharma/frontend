@@ -32,14 +32,13 @@ function Driver() {
   return (
     <>
       <Footer />
-      <div className="mt-16">
-        <div className="h-screen p-6 flex flex-col items-center">
-          <div className="flex justify-between">
+      <div className="mt-16  bg-slate-300	 text-black	">
+        <div className="h-screen p-6 flex flex-col items-center ">
+          <div className="flex justify-between my-4">
             <h1 className="text-3xl font-bold mx-8">Drivers List</h1>
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               onClick={() => {
-                console.log("1");
                 navigate("create", {
                   state: {},
                 });
